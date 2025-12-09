@@ -5,7 +5,12 @@ CFLAGS = -Wall -Wextra -pedantic -std=c2x #declaração das flags para o compila
 TARGET = MyWC #declaração do nome do app
 OBJ = main.o \
 	  myWcUtils.o #declaração dos objectos que serão linkados para criar o programa
-
+#
+#Notas sobre a sintax do MAKEFILE
+# O valor antes do : é o nome do objecto que será outputed pelo comando a baixo
+# O valor depois do : é o que deverá ser usado no linking para o executavel
+# o valor que está logo abaio é o comando que será executado
+# e o $() é uma forma de chamar as variaveis declaradas no começo do ficheiro que tem o seu nom e colocado entre os parenteses
 #Compilação dos diferentes objectos antes de se tornar o executavel
 $(TARGET): $(OBJ)
 	$(CC) $(OBJ) -o $(TARGET)
