@@ -1,0 +1,26 @@
+CC = gcc#declaro o compilador, no caso o gnu c compiler (coletania de copiladores do gnu)
+CFLAGS = -Wall -Wextra -pedantic -std=c2x #declaração das flags para o compilador
+
+TARGET = MyWC #declaração do nome do app
+OBJ = main.o \
+	  myWcUtils.o #declaração dos objectos que serão linkados para criar o programa
+#
+#Notas sobre a sintax do MAKEFILE
+# O valor antes do : é o nome do objecto que será outputed pelo comando a baixo
+# O valor depois do : é o que deverá ser usado no linking para o executavel
+# o valor que está logo abaio é o comando que será executado
+# e o $() é uma forma de chamar as variaveis declaradas no começo do ficheiro que tem o seu nom e colocado entre os parenteses
+#Compilação dos diferentes objectos antes de se tornar o executavel
+$(TARGET): $(OBJ)
+	$(CC) $(OBJ) -o $(TARGET)
+
+main.o: main.c myWcUtils.h
+	$(CC) $(CFLAGS) -c main.c
+
+myWcUtils.o: myWcUtils.c myWcUtils.h
+	$(CC) $(CFLAGS) -c myWcUtils.c
+
+
+#função de limpesa dos objectos e executaveis criados
+clean: 
+	rm -f $(OBJ) $(TARGET)

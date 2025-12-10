@@ -22,7 +22,6 @@ int main(int argc, char* argv[]){
         default:{
             for(int i = 1; i < argc; i++)
             {
-                if()
             }
         }break; 
     }
