@@ -19,8 +19,11 @@ int main(int argc, char* argv[]){
                 // add the logic to execute orde
             }
         }break;
-        case 3:{
-            
+        default:{
+            for(int i = 1; i < argc; i++)
+            {
+                if()
+            }
         }break; 
     }
     return 0;
