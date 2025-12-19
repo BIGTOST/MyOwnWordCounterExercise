@@ -20,6 +20,29 @@ void noFileSpecify() {
     printf("No file was specified, please try again\n");
 }
 
+int contingTheNumberOfLines(char stringVal[]){
+    int numbOfLines = 0;
+    FILE *fileToRead;
 
+    fileToRead = fgetc(stringVal, "r");
+
+    if(fileToRead == NULL){
+        printf("File Not Found");
+        fclose(fileToRead);
+        return -1;
+    }
+
+    while (1) {
+        if(feof(fileToRead)){
+            break;
+        }
+    
+        int character = fgetc(fileToRead);
+        if(character == '\n'){ numbOfLines++;}
+
+    }
+    fclose(fileToRead);
+    return numbOfLines;
+}
 
 

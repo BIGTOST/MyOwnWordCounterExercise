@@ -11,17 +11,18 @@ int main(int argc, char* argv[]){
             noFileSpecify();
         }break;
         case 2:{
-            
             if(isAFlag(argv[1])){
                 noFileSpecify();
             }
             else {
-                // add the logic to execute orde
+               // add the logic to execute orde
+                printf("%s",argv[1]);
             }
         }break;
         default:{
-            for(int i = 1; i < argc; i++)
+            for(int i = 0; i < argc; i++)
             {
+                printf("%s\n", argv[i]);
             }
         }break; 
     }

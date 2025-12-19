@@ -6,4 +6,6 @@ bool isAFlag(char *);
 
 void noFileSpecify();
 
+int contingTheNumberOfLines(char *);
+
 #endif
